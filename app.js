@@ -13,7 +13,7 @@ Vue.component('botonera', {
         return {
          valor_actual_display: ' ',
          valor_anterior_display: ' ',
-          contador: [9,8,7,"*",6,5,4,"/",3,2,1,"+",0,".","clear","-","calc",],
+          contador: [7,8,9,"*",4,5,6,"/",1,2,3,"+","clear",0,".","-","calc",],
           operador: ' '
         }
       },
