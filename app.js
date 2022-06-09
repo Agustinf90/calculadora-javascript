@@ -2,16 +2,8 @@
 Vue.component('display', {
     props : ['valor'],
     template: `
-    <div style="display: grid;
-    grid-area: 1 / 1 / auto / 6;
-    background-color: black;
-    margin-left: 25px;
-    margin-right: 25px;
-    color: white;
-    margin-bottom: 15px;
-    padding: 12px;
-    text-align: end;
-    font-size: 26px;"> {{ valor }}
+    <div style="display: grid; grid-area: 1 / 1 / auto / 6; background-color: black; margin-left: 25px;
+    margin-right: 25px; color: white; margin-bottom: 15px; padding: 12px; text-align: end; font-size: 26px;"> {{ valor }}
 
     </div>
     `
@@ -68,21 +60,12 @@ Vue.component('botonera', {
     template: `
     <div>
     
-    <div style="display: grid;
-    grid-template-columns: repeat(5, 100px);
-    grid-template-rows: repeat(4, 60px);
-    background-color: grey;
-    margin: auto;
-    padding: 25px;
-    width: 500px;
-    border-radius: 10px;">
+    <div style="display: grid; grid-template-columns: repeat(5, 100px); grid-template-rows: repeat(4, 60px);
+    background-color: grey; margin: auto; padding: 25px; width: 500px; border-radius: 10px;">
     <display :valor="valor_actual_display"></display>
-    <div style="display: flex; 
-    justify-content: center;" v-for="k in contador" :key="k">
-    
+    <div style="display: flex; justify-content: center;" v-for="k in contador" :key="k">
     <button style="width: 55px; display: flex; justify-content: center; font-size: 22px; height: 30px;
-    border-radius: 10px;"v-on:click="action(k)">{{ k }}</button>
-    </div>
+    border-radius: 10px;"v-on:click="action(k)">{{ k }}</button> </div>
     </div>
     </div>`
 })
