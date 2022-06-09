@@ -21,7 +21,7 @@ Vue.component('botonera', {
         action(tecla) {
                 if (!isNaN(tecla) || tecla === '.') {    
                     this.valor_actual_display += tecla + '';
-                }   
+                };   
                 if(['+','-','*','/'].includes(tecla)) {
                     let numerico = this.valor_actual_display;
                     numerico = Number(numerico);
@@ -29,7 +29,7 @@ Vue.component('botonera', {
                     this.valor_anterior_display = this.valor_actual_display;
                     this.operador = tecla;
                     this.valor_actual_display = ' ';
-                }
+                };
                 if(tecla === 'calc') {
                     let numerico = this.valor_actual_display;
                     numerico = Number(numerico);
