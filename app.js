@@ -2,8 +2,17 @@
 Vue.component('display', {
     props : ['valor'],
     template: `
-    <div style="background-color: black;width: 200px; width: 200px; height: 70px; margin-left: 25px;">
-    <h2 id="display" style=" color: white; padding: 10px">{{ valor }}</h2>
+    <div style="display: grid;
+    grid-area: 1 / 1 / auto / 6;
+    background-color: black;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: white;
+    margin-bottom: 15px;
+    padding: 12px;
+    text-align: end;
+    font-size: 26px;"> {{ valor }}
+
     </div>
     `
 })
@@ -13,7 +22,7 @@ Vue.component('botonera', {
         return {
          valor_actual_display: ' ',
          valor_anterior_display: ' ',
-          contador: [7,8,9,"*",4,5,6,"/",1,2,3,"+","clear",0,".","-","calc",],
+          contador: [7,8,9,"*","/",4,5,6,"+","-",1,2,3,"clear","calc",0,"."],
           operador: ' '
         }
       },
@@ -57,15 +66,24 @@ Vue.component('botonera', {
           }
       },
     template: `
-    <div style="display: grid; grid-template-columns: repeat(4, 100px);
-    grid-template-rows: 60px repeat(5, 60px);
-    background-color: grey; margin: auto; padding: 25px; width: 400px; border-radius: 10px;">
-    <div style="display: flex;
+    <div>
+    
+    <div style="display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(4, 60px);
+    background-color: grey;
+    margin: auto;
+    padding: 25px;
+    width: 500px;
+    border-radius: 10px;">
+    <display :valor="valor_actual_display"></display>
+    <div style="display: flex; 
     justify-content: center;" v-for="k in contador" :key="k">
+    
     <button style="width: 55px; display: flex; justify-content: center; font-size: 22px; height: 30px;
     border-radius: 10px;"v-on:click="action(k)">{{ k }}</button>
     </div>
-    <display :valor="valor_actual_display"></display>
+    </div>
     </div>`
 })
 
